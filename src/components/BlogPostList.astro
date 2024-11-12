@@ -1,0 +1,19 @@
+---
+import BlogPost from './BlogPost.astro'; 
+const { post } = Astro.props
+const blogPosts = await Astro.glob('/src/pages/blog/*.md');
+---
+
+<ul id="blogposts">
+  {blogPosts.sort((a, b) => b.frontmatter.id - a.frontmatter.id).map((post) => <BlogPost post={post} />)}
+</ul>
+
+<style>
+  ul {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    list-style: none;
+  }
+</style>

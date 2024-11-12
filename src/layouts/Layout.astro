@@ -1,5 +1,6 @@
 ---
-
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -12,25 +13,13 @@
     <title>i &lt;3 web blog</title>
   </head>
   <body>
-    <header>
-      <nav>
-        
-      </nav>
-    </header>
+    <Header></Header>
 
     <main>
         <slot />
     </main>
 
-    <footer>
-      <div class="footer__socials">
-        <ion-icon name="logo-linkedin"></ion-icon>
-        <ion-icon name="logo-instagram"></ion-icon>
-        <ion-icon name="logo-tiktok"></ion-icon>
-        <ion-icon name="logo-github"></ion-icon>
-      </div>
-      <p class="footer__message">made with &lt;3 by eef</p>
-    </footer>
+    <Footer></Footer>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   </body>

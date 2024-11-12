@@ -1,11 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import BlogPost from "../components/BlogPost.astro";
-const blogPosts = await Astro.glob("./blog/*.md");
+import BlogPostList from "../components/BlogPostList.astro";
 ---
 
 <Layout>
-	<ul id="blogposts">
-    {blogPosts.sort((a, b) => b.frontmatter.id - a.frontmatter.id).map((post) => <BlogPost post={post} />)}
-  </ul>
+	<BlogPostList></BlogPostList>
 </Layout>
